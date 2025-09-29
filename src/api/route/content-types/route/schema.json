@@ -1,0 +1,119 @@
+{
+  "kind": "collectionType",
+  "collectionName": "routes",
+  "info": {
+    "singularName": "route",
+    "pluralName": "routes",
+    "displayName": "Route",
+    "description": "Tourist routes with stops"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "tagline": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "cardImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "distance": {
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "totalStops": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "experienceType": {
+      "type": "string",
+      "required": false,
+      "default": "Premium Experience"
+    },
+    "totalPoints": {
+      "type": "integer",
+      "required": false,
+      "default": 0
+    },
+    "rating": {
+      "type": "decimal",
+      "required": false,
+      "default": 5
+    },
+    "tags": {
+      "type": "json",
+      "required": false
+    },
+    "bestTime": {
+      "type": "text",
+      "required": false
+    },
+    "weather": {
+      "type": "text",
+      "required": false
+    },
+    "difficulty": {
+      "type": "string",
+      "required": false
+    },
+    "accessibility": {
+      "type": "text",
+      "required": false
+    },
+    "toBring": {
+      "type": "text",
+      "required": false
+    },
+    "budget": {
+      "type": "string",
+      "required": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "routes"
+    },
+    "curator": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::curator.curator",
+      "inversedBy": "routes"
+    },
+    "stops": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stop.stop",
+      "mappedBy": "route"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "curators",
+  "info": {
+    "singularName": "curator",
+    "pluralName": "curators",
+    "displayName": "Curator",
+    "description": "Route curators and experts"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "bio": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "routes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::route.route",
+      "mappedBy": "curator"
+    }
+  }
+}
