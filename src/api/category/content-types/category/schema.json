@@ -42,10 +42,22 @@
       "type": "string",
       "required": false
     },
+    "displayMode": {
+      "type": "enumeration",
+      "enum": ["routes", "places"],
+      "default": "routes",
+      "required": true
+    },
     "routes": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::route.route",
+      "mappedBy": "category"
+    },
+    "places": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stop.stop",
       "mappedBy": "category"
     }
   }
