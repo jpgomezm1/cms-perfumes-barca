@@ -74,6 +74,10 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "places"
+    },
+    "googleMapsUrl": {
+      "type": "string",
+      "required": false
     }
   }
 }
