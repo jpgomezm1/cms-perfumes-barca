@@ -448,6 +448,9 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    displayMode: Schema.Attribute.Enumeration<['routes', 'places']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'routes'>;
     heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -458,6 +461,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    places: Schema.Attribute.Relation<'oneToMany', 'api::stop.stop'>;
     publishedAt: Schema.Attribute.DateTime;
     routes: Schema.Attribute.Relation<'oneToMany', 'api::route.route'>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
@@ -564,16 +568,18 @@ export interface ApiStopStop extends Struct.CollectionTypeSchema {
   attributes: {
     activities: Schema.Attribute.JSON;
     address: Schema.Attribute.Text;
+    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    googleMapsUrl: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
-    latitude: Schema.Attribute.Decimal;
+    latitude: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::stop.stop'> &
       Schema.Attribute.Private;
-    longitude: Schema.Attribute.Decimal;
+    longitude: Schema.Attribute.String;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer &
       Schema.Attribute.Required &
