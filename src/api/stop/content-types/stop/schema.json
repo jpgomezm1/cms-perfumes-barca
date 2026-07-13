@@ -10,11 +10,16 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "order": {
       "type": "integer",
@@ -23,27 +28,33 @@
     },
     "type": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "walkTime": {
       "type": "string",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "timeAtStop": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "address": {
       "type": "text",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "activities": {
       "type": "json",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "image": {
       "type": "media",

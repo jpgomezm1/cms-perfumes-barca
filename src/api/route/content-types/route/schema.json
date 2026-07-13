@@ -10,11 +10,16 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "slug": {
       "type": "uid",
@@ -23,11 +28,13 @@
     },
     "tagline": {
       "type": "string",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "description": {
       "type": "text",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "heroImage": {
       "type": "media",
@@ -43,11 +50,13 @@
     },
     "distance": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "duration": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "totalStops": {
       "type": "integer",
@@ -57,7 +66,8 @@
     "experienceType": {
       "type": "string",
       "required": false,
-      "default": "Premium Experience"
+      "default": "Premium Experience",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "totalPoints": {
       "type": "integer",
@@ -75,27 +85,33 @@
     },
     "bestTime": {
       "type": "text",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "weather": {
       "type": "text",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "difficulty": {
       "type": "string",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "accessibility": {
       "type": "text",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "toBring": {
       "type": "text",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "budget": {
       "type": "string",
-      "required": false
+      "required": false,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "category": {
       "type": "relation",
