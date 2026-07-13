@@ -1,0 +1,11 @@
+node_modules
+.tmp
+.cache
+dist
+build
+.git
+.env
+.env.*
+*.log
+.strapi
+scripts/seed-perfumerias.js
